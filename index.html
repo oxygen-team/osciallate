@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Osciallate - by oxygen#4877</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans&family=Montserrat:wght@800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        iframe {
+            -webkit-box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        .oxy {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 3%;
+            padding-top: 50px;
+            margin-bottom: -30px;
+            height: 3%;
+        }
+
+        .width {
+            margin-right: 59px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            padding-top: 50px;
+            text-align: center;
+            color: #1f1f1f;
+            letter-spacing: -.025em;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .text {
+            //font-family: 'Fira Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            --text-opacity: 1;
+            color: #24262d;
+            margin-bottom: 30px;
+        }
+
+        .embedtool {
+
+            margin: auto;
+            width: 50%;
+
+            grid-column-start: span 10;
+            grid-column-end: span 10;
+        }
+
+        .code {
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            background-color: #ffffff;
+            //background-color: #1E1E1E;
+            border-radius: 2px 2px 2px 2px;
+
+            //color: #d5d6d7;
+            font-size: 14px;
+            //font-size: 1em;
+            word-wrap: break-word;
+            -webkit-box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+
+        }
+
+        .inputset {
+            height: 0%;
+            width: 35px;
+            outline: 1px solid #ffffff;
+            border: 1px solid #EAEAEA;
+            border-radius: 5px 5px 5px 5px;
+            width: 100%;
+            height: 35px;
+            color: #9999A6;
+            font-size: 13px;
+        }
+
+        .inputset:focus {
+            border: 1px solid #000000;
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            //font-family: 'Fira Code', monospace;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-left: 5px;
+        }
+
+        .settings {
+
+            border-radius: 2px 2px 2px 2px;
+            padding: 15px;
+            font-family: 'Fira Sans', sans-serif;
+
+        }
+
+        .size {
+            padding: 20px;
+
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-top: -2.5rem;
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            padding-bottom: 50px;
+        }
+
+        .copy {
+            text-align: center;
+            font-family: 'Fira Sans', sans-serif;
+
+            font-size: 10px;
+
+            color: blue;
+
+        }
+
+        label {
+            font-size: 0.875rem;
+
+        }
+
+        input {
+            margin-top: 3px;
+            margin-bottom: 20px;
+            borderstyle: 0px;
+        }
+
+        .checkbox {
+            margin-right: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app" class="top">
+        <div class="iframe-wrapper" :style="iframestyle">
+
+            <iframe :width="width" :height="height" scrolling="no" frameborder="no" allow="autoplay"
+                :src="apistring"></iframe>
+
+        </div>
+        <div class="embedtool">
+            <h1>Oscillate</h1>
+            <p class="subtitle">Soundcloud Embed Tool</p>
+            <p class="text">Hello, thanks for using our tool. We have developed a simple tool for making fully custom
+                SoundCloud embeds. You have the control over SoundCloud Premium deatures as Features that dont exist in
+                the orginal embed window. I hope we pelped you. </p>
+            <h2 class="label-embed">Embed</h2>
+            <p class="code">{{ embedshowcase }}</p>
+            <br>
+            <h2>Settings</h2>
+            <div id="settings">
+
+                <div class=settings>
+                    <label for="width">Width</label><br>
+                    <input id="width" type="text" class="inputset" v-model="width"> <br>
+                    <label for="height">Height</label> <br>
+                    <input id="height" type="text" class="inputset" v-model="height"><br>
+                    <label for="track">Track-Id</label>
+                    <input id="track" type="text" class="inputset" v-model="track"><br>
+                    <label for="">Color</label>
+                    <input type="color" id="favcolor" name="favcolor" v-model="color" value="000000" style="border-radius: 5px; border: 0px solid transparent;
+    margin-left: 10px; outline: none;"><br>
+                    <label for="auto">auto play</label>
+                    <input type="checkbox" id="A" value="A" v-model="autoplay" class="checkbox">
+                    <label for="auto">hide related</label>
+                    <input type="checkbox" id="B" value="B" v-model="related" class="checkbox">
+                    <label for="auto">show comments</label>
+                    <input type="checkbox" id="C" value="C" v-model="comments" class="checkbox">
+                    <label for="auto">show user</label>
+                    <input type="checkbox" id="D" value="D" v-model="user" class="checkbox">
+                    <label for="auto">show reposts</label>
+                    <input type="checkbox" id="E" value="E" v-model="reposts" class="checkbox">
+                    <label for="auto">show teaser</label>
+                    <input type="checkbox" id="F" value="F" v-model="teaser" class="checkbox">
+                    <label for="auto">visual</label>
+                    <input type="checkbox" id="G" value="G" v-model="visual" class="checkbox">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p class="copy">copyright by oxygen© 2023</p>
+        </footer>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                width: 800,
+                height: 200,
+                track: 542791275,
+                color: "-",
+                autoplay: false,
+                related: false,
+                comments: false,
+                user: false,
+                reposts: false,
+                teaser: false,
+                visual: false,
+
+
+            },
+
+            computed: {
+                apistring: function () {
+                    return `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.track}&color=%23${this.color.substring(1)}&auto_play=${this.autoplay}&hide_related=${this.related}&show_comments=${this.comments}&show_user=${this.user}&show_reposts=${this.reposts}&show_teaser=${this.teaser}&visual=${this.visual}`
+                },
+                embedshowcase: function () {
+                    return `<iframe width="${this.width}" height="${this.height}" scrolling="on" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${this.track}&color=%23${this.color.substring(1)}&auto_play=${this.autoplay}&hide_related=${this.related}&show_comments=${this.comments}&show_user=${this.user}&show_reposts=${this.reposts}&show_teaser=${this.teaser}&visual=${this.visual}"></iframe>`
+                },
+                iframestyle: function () {
+                    return `width: ${this.width}px; margin: auto; padding: 50px;`
+                }
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>
