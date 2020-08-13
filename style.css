@@ -1,0 +1,128 @@
+iframe {
+    -webkit-box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.oxy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3%;
+    padding-top: 50px;
+    margin-bottom: -30px;
+    height: 3%;
+}
+
+.width {
+    margin-right: 59px;
+}
+
+h1 {
+    font-size: 4rem;
+    padding-top: 50px;
+    text-align: center;
+    color: #1f1f1f;
+    letter-spacing: -.025em;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24262d;
+    margin-bottom: 30px;
+}
+
+.embedtool {
+
+    margin: auto;
+    width: 50%;
+
+    grid-column-start: span 10;
+    grid-column-end: span 10;
+}
+
+.code {
+    padding: 15px;
+    font-family: 'Fira Code', monospace;
+    background-color: #ffffff;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 14px;
+    word-wrap: break-word;
+    -webkit-box-shadow: 16px 16px 50px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+
+}
+
+.inputset {
+    height: 0%;
+    width: 35px;
+    outline: 1px solid #ffffff;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px 5px 5px 5px;
+    width: 100%;
+    height: 35px;
+    color: #9999A6;
+    font-size: 13px;
+}
+
+.inputset:focus {
+    border: 1px solid #000000;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+}
+
+.blue {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.settings {
+
+    border-radius: 2px 2px 2px 2px;
+    padding: 15px;
+    font-family: 'Fira Sans', sans-serif;
+
+}
+
+.size {
+    padding: 20px;
+
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: -2.5rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    padding-bottom: 50px;
+}
+
+.copy {
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+
+    font-size: 10px;
+
+    color: blue;
+
+}
+
+label {
+    font-size: 0.875rem;
+
+}
+
+input {
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+
+.checkbox {
+    margin-right: 15px;
+}
