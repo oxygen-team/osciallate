@@ -106,10 +106,9 @@ h2 {
 .copy {
     text-align: center;
     font-family: 'Fira Sans', sans-serif;
-
-    font-size: 10px;
-
-    color: blue;
+    color: #d7d7d7;
+    font-size: 14px;
+    text-decoration: none;
 
 }
 
