@@ -85,7 +85,6 @@ h2 {
 .settings {
 
     border-radius: 2px 2px 2px 2px;
-    padding: 15px;
     font-family: 'Fira Sans', sans-serif;
 
 }
@@ -106,8 +105,8 @@ h2 {
 .copy {
     text-align: center;
     font-family: 'Fira Sans', sans-serif;
-    color: #d7d7d7;
-    font-size: 14px;
+    color: blue;
+    font-size: 9px;
     text-decoration: none;
 
 }
